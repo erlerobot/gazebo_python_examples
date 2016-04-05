@@ -7,17 +7,16 @@ import cv2
 import numpy as np
 import mavros
 from cv_bridge import CvBridge, CvBridgeError
-from std_msgs.msg import String
+
 from sensor_msgs.msg import Image
 from mavros.msg import OverrideRCIn
-
-pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size=10)
 
 class image_converter:
 
   def __init__(self):
 
     self.bridge = CvBridge()
+    self.pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size=10)
     self.image_sub = rospy.Subscriber("/rover/front/image_front_raw",Image,self.callback)
 
   def callback(self,data):
@@ -62,7 +61,7 @@ class image_converter:
     msg.channels[5] = 0
     msg.channels[6] = 0
     msg.channels[7] = 0
-    pub.publish(msg)
+    self.pub.publish(msg)
 
 def main(args):
   ic = image_converter()

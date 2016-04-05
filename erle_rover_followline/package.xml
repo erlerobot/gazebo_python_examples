@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>erle_rover_followline</name>
+  <version>0.0.0</version>
+  <description>The erle_rover_followline package</description>
+
+  <maintainer email="erle@todo.todo">erle</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>rospy</build_depend>
+  <build_depend>mavros</build_depend>
+  <build_depend>mav_msgs</build_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>mavros</run_depend> 
+  <run_depend>mav_msgs</run_depend>
+
+</package>

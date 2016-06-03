@@ -4,10 +4,9 @@ import rospy
 import cv2
 import numpy as np
 import math
-import mavros
 
 from sensor_msgs.msg import LaserScan
-from mavros.msg import OverrideRCIn
+from mavros_msgs.msg import OverrideRCIn
 
 pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size=10)
 

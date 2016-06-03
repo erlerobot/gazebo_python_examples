@@ -5,11 +5,10 @@ import sys
 import rospy
 import cv2
 import numpy as np
-import mavros
 from cv_bridge import CvBridge, CvBridgeError
 
 from sensor_msgs.msg import Image
-from mavros.msg import OverrideRCIn
+from mavros_msgs.msg import OverrideRCIn
 
 class image_converter:
 
